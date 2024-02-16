@@ -1,19 +1,13 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/XWJpEEuo)
+The goal of this assignment is to write an image filtering function and use it to create hybrid images using a simplified version of the SIGGRAPH 2006 paper by Oliva, Torralba, and Schyns. Hybrid images are static images that change in interpretation as a function of the viewing distance. The basic idea is that high frequency tends to dominate perception when it is available, but, at a distance, only the low frequency (smooth) part of the signal can be seen. By blending the high frequency portion of one image with the low-frequency portion of another, you get a hybrid image that leads to different interpretations at different distances.
 
-
-This is Project 1 for the course CS5670 : Introduction to Computer Vision taught by Prof. Noah Snavely. 
-This project is submitted by Kopal Sharma (ks2446). 
-
-The project required us to write image filtering function and use it to create hybrid images. 
-
-I used the images of two bollywood celebrities from the 90's - Salman Khan and Aishwariya Rai. 
-The dimension of both of the images was 260 x 300. 
+I used the images of the current prime minister of india, narendra modi and another indian politician, Rahul Gandhi. 
+The dimension of both of the images was 400 x 400. 
 
 The images are - 
 
-![aishwariya rai](<aishwariya rai 260 x 300.jpg>)
+![modi](https://github.com/kopalsharma19/Hybrid-Images/assets/43065428/22459a33-d5d8-4f8b-bbe7-4eb523226d20)
 
-![salman khan](<salman khan 260 x 300.jpg>)
+![rahul-gandhi (1)](https://github.com/kopalsharma19/Hybrid-Images/assets/43065428/2832b76b-b5d3-4621-9ae3-6d99475fa4bc)
 
 
 The configurations of the hybrid image was - 
@@ -22,15 +16,15 @@ The configurations of the hybrid image was -
 
   "left_sigma": 1.7,
 
-  "left_size": 6,
+  "left_size": 13,
 
   "left_mode": "low",
 
-  "right_sigma": 1.7,
+  "right_sigma": 6.9,
 
-  "right_size": 3,
+  "right_size": 8,
 
-  "right_mode": "low",
+  "right_mode": "high",
 
   "mixin_ratio": 0.5,
 
@@ -44,10 +38,22 @@ The configurations of the hybrid image was -
 
 The hybrid image is 
 
-![hybrid image](hybrid-ash-sallu.JPG)
+![modi-gandhi-hybrid](https://github.com/kopalsharma19/Hybrid-Images/assets/43065428/cd4b87bf-8467-4f54-a2d2-309a04f741d1)
 
-I used low pass for both the left and right images, as I wanted to retain as many features from 
-both the faces as possible. 
+I used low pass for the left and and high pass for the right image, trying to form a perfect blend where both can be recognized from different 
+perspectives. 
 
-Fun fact - They used to date back in the 90's and were the most good looking couple ever, tabloids often talked about
-how good looking their kids would be. Their breakup was a major news back then.
+To run this program - 
+1. Go to the main directory in the anaconda prompt terminal
+2. Create an environment.yml
+3. Activate conda environment
+4. run the code line "python gui.py -t resources/sample-correspondance.json -c resources/sample-config.json"
+5. Load left image and right image manually in the GUI
+6. View the hybrid image and adjust parameters to create the perfect blend
+7. Save your hybrid image
+
+Thanks! 
+
+Contributor - Kopal Sharma (kopalsharma2000)
+
+
