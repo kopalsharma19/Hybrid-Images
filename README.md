@@ -54,6 +54,6 @@ To run this program -
 
 Thanks! 
 
-Contributor - Kopal Sharma (kopalsharma2000)
+Contributor - Kopal Sharma (kopalsharma2000@gmail.com)
 
 
